@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Directional Swipe Button</string>
+    <string name="image">image</string>
+
+    <string name="marked_all_as_read">Marked all as read</string>
+    <string name="slide_to_mark_all_as_read">Slide to mark all as read</string>
+</resources>
