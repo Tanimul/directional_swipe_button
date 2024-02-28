@@ -39,10 +39,12 @@ class DirectionalSwipeButton : ConstraintLayout {
         binding = LayoutDirectionalSwipeBinding.inflate(LayoutInflater.from(context), this, true)
     }
 
+
     override fun onFinishInflate() {
         super.onFinishInflate()
 
         setupTouchListener()
+        startLightAnimation()
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -88,6 +90,27 @@ class DirectionalSwipeButton : ConstraintLayout {
         })
     }
 
+    private fun startLightAnimation() {
+        val textView = binding.tvSlide
+        val animator = ValueAnimator.ofFloat(0f, 1f).apply {
+            duration = 1000 // Set animation duration
+            repeatCount = ValueAnimator.INFINITE
+            addUpdateListener { valueAnimator ->
+                // Update the position of the light by adjusting its layout parameters
+                val fraction = valueAnimator.animatedFraction
+                val parentWidth = textView.width
+                val startX = parentWidth * 0f
+                val endX = parentWidth * 0.95f
+                val newX = startX + (endX - startX) * fraction
+                val layoutParams = binding.viewMoving.layoutParams as LayoutParams
+                layoutParams.marginStart = newX.toInt()
+                binding.viewMoving.layoutParams = layoutParams
+            }
+        }
+        animator.start() // Start the animator
+
+    }
+
     private fun animateBack() {
         ValueAnimator.ofFloat(binding.ivSlide.x, 4.convertDpToPx().toFloat()).apply {
             interpolator = AccelerateDecelerateInterpolator()
@@ -121,5 +144,6 @@ class DirectionalSwipeButton : ConstraintLayout {
     fun setMarkedTextLabel(markedText: CharSequence) {
         binding.tvMarked.text = markedText
     }
+
 
 }

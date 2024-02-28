@@ -20,8 +20,6 @@
             android:id="@+id/tv_slide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:text="@string/slide_to_mark_all_as_read"
             android:textColor="#FF5757"
             android:textSize="14sp"
@@ -38,6 +36,15 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_moving"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/background_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_slide"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
