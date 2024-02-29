@@ -1,4 +1,4 @@
-package com.tanimul.directionalswipebutton
+package bd.com.media365.directional_swipe_button
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

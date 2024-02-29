@@ -1,4 +1,4 @@
-package com.tanimul.directionalswipebutton.extentions
+package bd.com.media365.directional_swipe_button.extentions
 
 import android.content.res.Resources
 

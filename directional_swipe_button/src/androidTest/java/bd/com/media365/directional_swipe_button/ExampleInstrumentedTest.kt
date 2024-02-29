@@ -1,4 +1,4 @@
-package com.tanimul.directionalswipebutton
+package bd.com.media365.directional_swipe_button
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.tanimul.directionalswipebutton", appContext.packageName)
+        assertEquals("bd.com.media365.directional_swipe_button.test", appContext.packageName)
     }
 }

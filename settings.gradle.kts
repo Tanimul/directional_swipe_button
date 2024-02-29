@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Directional Swipe Button"
 include(":app")
-include(":DirectionalSwipeButton")
+include(":directional_swipe_button")

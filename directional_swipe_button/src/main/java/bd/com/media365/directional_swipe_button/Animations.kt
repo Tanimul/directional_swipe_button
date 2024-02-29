@@ -1,4 +1,4 @@
-package com.tanimul.directionalswipebutton
+package bd.com.media365.directional_swipe_button
 
 import android.content.Context
 import android.view.View
