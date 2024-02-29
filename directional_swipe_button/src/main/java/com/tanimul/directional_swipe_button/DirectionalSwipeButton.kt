@@ -1,4 +1,4 @@
-package bd.com.media365.directional_swipe_button
+package com.tanimul.directional_swipe_button
 
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
@@ -12,10 +12,10 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.*
 import androidx.annotation.Dimension
 import androidx.constraintlayout.widget.ConstraintLayout
-import bd.com.media365.directional_swipe_button.Animations.animateFadeHide
-import bd.com.media365.directional_swipe_button.Animations.animateFadeShow
-import bd.com.media365.directional_swipe_button.databinding.LayoutDirectionalSwipeBinding
-import bd.com.media365.directional_swipe_button.extentions.convertDpToPx
+import com.tanimul.directional_swipe_button.Animations.animateFadeHide
+import com.tanimul.directional_swipe_button.Animations.animateFadeShow
+import com.tanimul.directional_swipe_button.databinding.LayoutDirectionalSwipeBinding
+import com.tanimul.directional_swipe_button.extentions.convertDpToPx
 
 class DirectionalSwipeButton : ConstraintLayout {
 

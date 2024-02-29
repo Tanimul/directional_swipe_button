@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <bd.com.media365.directional_swipe_button.DirectionalSwipeButton
+    <com.tanimul.directional_swipe_button.DirectionalSwipeButton
         android:id="@+id/swipe_btn"
         android:layout_width="match_parent"
         android:layout_height="48dp"

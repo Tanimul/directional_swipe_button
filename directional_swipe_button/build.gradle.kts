@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "bd.com.media365.directional_swipe_button"
+    namespace = "com.tanimul.directional_swipe_button"
     compileSdk = 34
 
     defaultConfig {
@@ -25,11 +25,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
@@ -47,13 +47,18 @@ dependencies {
 }
 
 
-publishing {
-    publications {
-        create<MavenPublication>("release") {
-//            from(components["release"])
-            groupId = "com.github.tanimul"
-            artifactId = "Directional-Swipe-Button"
-            version = "1.0.0"
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                // Add dependencies directly
+                from(components["release"])
+
+                // Specify publication information
+                groupId = "com.github.tanimul"
+                artifactId = "directional_swipe_button"
+                version = "1.0.0"
+            }
         }
     }
 }
