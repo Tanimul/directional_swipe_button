@@ -20,6 +20,7 @@ import com.tanimul.directional_swipe_button.extentions.convertDpToPx
 class DirectionalSwipeButton : ConstraintLayout {
 
     private lateinit var binding: LayoutDirectionalSwipeBinding
+    private var swipeListener: OnSwipeListener? = null
 
     constructor(context: Context) : super(context) {
         init(context)
@@ -39,12 +40,16 @@ class DirectionalSwipeButton : ConstraintLayout {
         binding = LayoutDirectionalSwipeBinding.inflate(LayoutInflater.from(context), this, true)
     }
 
-
     override fun onFinishInflate() {
         super.onFinishInflate()
 
         setupTouchListener()
         startLightAnimation()
+    }
+
+    // Setter method for the swipe listener
+    fun setOnSwipeListener(listener: OnSwipeListener) {
+        swipeListener = listener
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -121,6 +126,8 @@ class DirectionalSwipeButton : ConstraintLayout {
     }
 
     private fun successfulSwipe() {
+        swipeListener?.onSwipeCompleted()
+
         animateFadeHide(context, binding.layoutSlide)
         animateFadeShow(context, binding.layoutMarked)
 
@@ -144,6 +151,5 @@ class DirectionalSwipeButton : ConstraintLayout {
     fun setMarkedTextLabel(markedText: CharSequence) {
         binding.tvMarked.text = markedText
     }
-
 
 }
